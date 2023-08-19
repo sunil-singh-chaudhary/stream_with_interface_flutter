@@ -12,6 +12,7 @@ class SecondWidget extends StatefulWidget {
 
 class _SecondWidgetState extends State<SecondWidget> {
   final StreamManagerInterface _streamManager = StreamManager();
+  //created factory instace in manager so it will return same instance
 
   @override
   void dispose() {
@@ -22,6 +23,7 @@ class _SecondWidgetState extends State<SecondWidget> {
 
   @override
   void initState() {
+    //work listen with streambuilder if it is broadcast else only one listen will be used
     _streamManager.getstream.listen((event) {
       debugPrint('listning $event');
     });
