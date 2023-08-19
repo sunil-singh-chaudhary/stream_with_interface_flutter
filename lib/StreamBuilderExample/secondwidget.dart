@@ -21,6 +21,14 @@ class _SecondWidgetState extends State<SecondWidget> {
   }
 
   @override
+  void initState() {
+    _streamManager.getstream.listen((event) {
+      debugPrint('listning $event');
+    });
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Center(
       child: StreamBuilder<String>(

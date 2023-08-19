@@ -11,7 +11,9 @@ class StreamManager implements StreamManagerInterface {
   }
   StreamManager._internal();
 
-  final StreamController<String> _streamController = StreamController<String>();
+  final StreamController<String> _streamController =
+      StreamController<String>.broadcast();
+
   @override
   Stream<String> get getstream => _streamController.stream;
   @override
